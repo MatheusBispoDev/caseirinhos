@@ -3,17 +3,22 @@ import 'package:flutter/material.dart';
 class TextfieldSearch extends StatelessWidget {
   final Color cursosColor;
   final TextStyle descriptionTextStyle;
+  final Function(String) onChanged;
 
   TextfieldSearch(
-      {required this.cursosColor, required this.descriptionTextStyle});
+      {required this.cursosColor, required this.descriptionTextStyle, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 60, right: 60),
+      padding: const EdgeInsets.only(left: 40, right: 40),
       child: Container(
         height: 50,
         width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          border: Border.all(width: 0.0),
+          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,14 +41,11 @@ class TextfieldSearch extends StatelessWidget {
                     enabledBorder: InputBorder.none,
                     border: InputBorder.none,
                   ),
+                  onChanged: onChanged,
                 ),
               ),
             ),
           ],
-        ),
-        decoration: BoxDecoration(
-          border: Border.all(width: 0.0),
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
         ),
       ),
     );
