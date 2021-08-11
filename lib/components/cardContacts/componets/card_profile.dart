@@ -10,13 +10,9 @@ class CardProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 60,
-      width: 60,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-        color: colorBackgroundProfile,
-      ),
+    return CircleAvatar(
+      backgroundColor: colorBackgroundProfile,
+      radius: 30,
       child: image != ''
           ? Image.asset(
               image,
