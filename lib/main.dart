@@ -41,9 +41,27 @@ class _ContatoseState extends State<ContatosPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+          ),
+        ],
+        selectedItemColor: Colors.amber[800],
+      ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: ListView(
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 70),
@@ -71,6 +89,14 @@ class _ContatoseState extends State<ContatosPage> {
               colorDivider: colorPrimay,
             ),
             SizedBox(height: 30),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 480,
+              child: ListView(
+                children: [],
+              ),
+              color: Colors.black,
+            )
           ],
         ),
       ),
