@@ -30,7 +30,6 @@ class _ContactPageState extends State<ContactPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CustomAnimatedBottomBar(
-        containerHeight: 70,
         backgroundColor: Colors.white,
         selectedIndex: selectedItemPosition,
         onItemSelected: (index) => setState(() => selectedItemPosition = index),

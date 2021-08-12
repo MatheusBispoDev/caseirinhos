@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 class BottomNavyBarItem {
   BottomNavyBarItem({
     required this.icon,
-    this.activeColor = Colors.orange,
-    this.textAlign,
-    this.inactiveColor = Colors.orange,
+    this.activeColor = Colors.black,
+    this.inactiveColor = Colors.black,
   });
 
   final Widget icon;
   final Color? activeColor;
   final Color? inactiveColor;
-  final TextAlign? textAlign;
 }

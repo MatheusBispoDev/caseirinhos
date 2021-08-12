@@ -26,33 +26,31 @@ class ItemCustomBar extends StatelessWidget {
       selected: isSelected,
       child: AnimatedContainer(
         width: 130,
-        height: 50,
+        height: 100,
         duration: animationDuration,
         decoration: UnderlineTabIndicator(
-          insets: EdgeInsets.only(bottom: 55, left: 20, right: 20),
+          insets: EdgeInsets.only(bottom: 80, left: 20, right: 20),
           borderSide: BorderSide(
             width: 5,
             color:
                 isSelected ? selectedcolor.withOpacity(0.8) : backgroundColor,
           ),
         ),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          physics: NeverScrollableScrollPhysics(),
-          child: Container(
-            width: 130,
-            padding: EdgeInsets.symmetric(horizontal: 8),
+        child: Center(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: NeverScrollableScrollPhysics(),
             child: IconTheme(
-              data: IconThemeData(
-                size: iconSize,
-                color: isSelected
-                    ? item.activeColor!.withOpacity(1)
-                    : item.inactiveColor == null
-                        ? item.activeColor
-                        : item.inactiveColor,
+                data: IconThemeData(
+                  size: iconSize,
+                  color: isSelected
+                      ? item.activeColor!.withOpacity(1)
+                      : item.inactiveColor == null
+                          ? item.activeColor
+                          : item.inactiveColor,
+                ),
+                child: item.icon,
               ),
-              child: item.icon,
-            ),
           ),
         ),
       ),

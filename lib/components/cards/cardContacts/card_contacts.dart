@@ -24,7 +24,7 @@ class CardContacts extends StatelessWidget {
           shape: InputBorder.none,
           elevation: 0.0,
           child: Padding(
-            padding: EdgeInsets.only(left: 30, top: 10, bottom: 10, right: 35),
+            padding: EdgeInsets.only(left: 30, top: 5, bottom:5, right: 35),
             child: Row(
               children: <Widget>[
                 CardProfile(),

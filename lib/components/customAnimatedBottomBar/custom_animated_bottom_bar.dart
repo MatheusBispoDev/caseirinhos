@@ -50,14 +50,15 @@ class CustomAnimatedBottomBar extends StatelessWidget {
                 children: items.map((item) {
                   var index = items.indexOf(item);
                   return GestureDetector(
-                      onTap: () => onItemSelected(index),
-                      child: ItemCustomBar(
-                        item: item,
-                        iconSize: iconSize,
-                        isSelected: index == selectedIndex,
-                        backgroundColor: bgColor,
-                        animationDuration: animationDuration,
-                      ));
+                    onTap: () => onItemSelected(index),
+                    child: ItemCustomBar(
+                      item: item,
+                      iconSize: iconSize,
+                      isSelected: index == selectedIndex,
+                      backgroundColor: bgColor,
+                      animationDuration: animationDuration,
+                    ),
+                  );
                 }).toList(),
               ),
             ),
@@ -81,7 +82,7 @@ class CustomAnimatedBottomBar extends StatelessWidget {
                   ),
                 ),
               ),
-              onTap: (){
+              onTap: () {
                 // TODO: Adicionar funcionadalide para ir para tela de vendas
               },
             ),
