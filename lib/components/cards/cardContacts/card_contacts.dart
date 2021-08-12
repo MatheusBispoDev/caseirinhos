@@ -1,9 +1,9 @@
-import 'package:caseirinhos/components/cardContacts/componets/card_descriptions.dart';
-import 'package:caseirinhos/components/cardContacts/componets/card_icon_button.dart';
-import 'package:caseirinhos/components/cardContacts/componets/card_profile.dart';
 import 'package:caseirinhos/models/contacts.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'cardComponets/card_descriptions.dart';
+import 'cardComponets/card_icon_button.dart';
+import 'cardComponets/card_profile.dart';
 
 class CardContacts extends StatelessWidget {
   final Contact contact;
