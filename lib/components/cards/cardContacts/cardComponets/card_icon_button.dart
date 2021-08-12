@@ -1,3 +1,4 @@
+import 'package:caseirinhos/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -19,12 +20,7 @@ class CardIconButton extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(50.0)),
           color: colorBackgroundIcon,
         ),
-        child: Center(
-          child: FaIcon(
-            icon,
-            color: colorIcon,
-          ),
-        ),
+        child: FontAwesomeIconCustom(icon, color: colorIcon, size: 25),
       ),
       onTap: onTap,
     );
