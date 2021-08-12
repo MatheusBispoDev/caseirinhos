@@ -37,23 +37,17 @@ class _ContactPageState extends State<ContactPage> {
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
             icon: FontAwesomeIconCustom(
-              FontAwesomeIcons.houseUser,
-              size: 32,
+              FontAwesomeIcons.home,
+              size: 26,
               color: Colors.black,
             ),
-            activeColor: Colors.black,
-            inactiveColor: Colors.black,
-            textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
             icon: FontAwesomeIconCustom(
-              FontAwesomeIcons.dAndD,
-              size: 32,
+              FontAwesomeIcons.userFriends,
+              size: 26,
               color: Colors.black,
             ),
-            activeColor: Colors.black,
-            inactiveColor: Colors.black,
-            textAlign: TextAlign.center,
           ),
         ],
       ),
