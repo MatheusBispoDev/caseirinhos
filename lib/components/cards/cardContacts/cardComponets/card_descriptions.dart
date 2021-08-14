@@ -1,19 +1,16 @@
 import 'package:caseirinhos/models/contacts.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CardDescriptions extends StatelessWidget {
-  final TextStyle nameCardTextStyle = GoogleFonts.workSans(
-      fontSize: 18, fontWeight: FontWeight.w500);
-  final TextStyle phoneCardTextStyle =
-      GoogleFonts.workSans(fontSize: 14, fontStyle: FontStyle.italic);
-
   final Contact contact;
 
   CardDescriptions(this.contact);
 
   @override
   Widget build(BuildContext context) {
+    final TextStyle? nameCardTextStyle = Theme.of(context).textTheme.subtitle1;
+    final TextStyle? phoneCardTextStyle = Theme.of(context).textTheme.subtitle2;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

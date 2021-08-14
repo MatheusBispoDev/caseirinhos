@@ -12,19 +12,19 @@ class CardContacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-       // TODO: Implementar toque simples no Card
+      onTap: () {
+        // TODO: Implementar toque simples no Card
       },
-      onLongPress: (){
+      onLongPress: () {
         // TODO: Implementar toque longo no Card
       },
       child: AnimatedContainer(
-        duration: Duration(seconds: 1),
+        duration: Duration(milliseconds: 1),
         child: Card(
           shape: InputBorder.none,
           elevation: 0.0,
           child: Padding(
-            padding: EdgeInsets.only(left: 30, top: 5, bottom:5, right: 35),
+            padding: EdgeInsets.only(left: 30, top: 5, bottom: 5, right: 35),
             child: Row(
               children: <Widget>[
                 CardProfile(),
@@ -33,7 +33,7 @@ class CardContacts extends StatelessWidget {
                   padding: EdgeInsets.only(left: 50, top: 5),
                   child: CardIconButton(
                     icon: FontAwesomeIcons.whatsapp,
-                    onTap: (){
+                    onTap: () {
                       // TODO: Adicionar funcionalidade no icon de mensagem
                     },
                   ),
@@ -41,11 +41,10 @@ class CardContacts extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 15, top: 5),
                   child: CardIconButton(
-                    icon: FontAwesomeIcons.phone,
-                    onTap: (){
-                      // TODO: Adicionar funcionalidade no icon de telefone
-                    }
-                  ),
+                      icon: FontAwesomeIcons.phone,
+                      onTap: () {
+                        // TODO: Adicionar funcionalidade no icon de telefone
+                      }),
                 ),
               ],
             ),

@@ -3,14 +3,12 @@ import 'package:caseirinhos/components/customAnimatedBottomBar/custom_animated_b
 import 'package:caseirinhos/components/customAnimatedBottomBar/model_custom_animated_bottom_bar.dart';
 import 'package:caseirinhos/components/section_divider/section_divider.dart';
 import 'package:caseirinhos/components/textfields/textfield_search.dart';
+import 'package:caseirinhos/layout/constants/contacts_page_constants.dart';
 import 'package:caseirinhos/models/contacts.dart';
 import 'package:caseirinhos/pages/contacts_page/contacts_header_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:caseirinhos/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
-
-final TextStyle descriptionTextStyle = GoogleFonts.workSans(fontSize: 16);
 
 class ContactPage extends StatefulWidget {
   @override
@@ -18,19 +16,20 @@ class ContactPage extends StatefulWidget {
 }
 
 class _ContactPageState extends State<ContactPage> {
-  final Color colorPrimay = Colors.orange;
-  final TextStyle titleTextStyle = GoogleFonts.workSans(fontSize: 32);
-  final TextStyle descriptionTextStyle = GoogleFonts.workSans(fontSize: 16);
-  final TextStyle sectionTextStyle = GoogleFonts.workSans(fontSize: 12);
   final List<Contact> contacts = Contact.getContacts();
-
+  final String dividerText = ContactsPageConstrants.titleAppBarContactsPage;
   int selectedItemPosition = 0;
 
   @override
   Widget build(BuildContext context) {
+    final Color colorPrimay = Theme.of(context).primaryColor;
+    final TextStyle? descriptionTextStyle =
+        Theme.of(context).textTheme.bodyText1;
+    final Color iconNavBarColor = Theme.of(context).indicatorColor;
+
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       bottomNavigationBar: CustomAnimatedBottomBar(
-        backgroundColor: Colors.white,
         selectedIndex: selectedItemPosition,
         onItemSelected: (index) => setState(() => selectedItemPosition = index),
         items: <BottomNavyBarItem>[
@@ -38,20 +37,19 @@ class _ContactPageState extends State<ContactPage> {
             icon: FontAwesomeIconCustom(
               FontAwesomeIcons.home,
               size: 26,
-              color: Colors.black,
+              color: iconNavBarColor,
             ),
           ),
           BottomNavyBarItem(
             icon: FontAwesomeIconCustom(
               FontAwesomeIcons.userFriends,
               size: 26,
-              color: Colors.black,
+              color: iconNavBarColor,
             ),
           ),
         ],
       ),
       body: Container(
-        color: Colors.white,
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: ListView(
@@ -59,7 +57,6 @@ class _ContactPageState extends State<ContactPage> {
             ContactHeadersPage(),
             SizedBox(height: 30),
             TextfieldSearch(
-              cursosColor: colorPrimay,
               descriptionTextStyle: descriptionTextStyle,
               onChanged: (String text) {
                 // TODO: Adicionar filtro de contatos
@@ -68,13 +65,12 @@ class _ContactPageState extends State<ContactPage> {
             ),
             SizedBox(height: 30),
             SectionDivider(
-              text: 'Recentes',
+              text: dividerText,
               textStyle: descriptionTextStyle,
               colorDivider: colorPrimay,
             ),
             SizedBox(height: 30),
             Container(
-              color: Colors.white,
               width: MediaQuery.of(context).size.width,
               height: 520,
               child: ListView.builder(
@@ -90,8 +86,3 @@ class _ContactPageState extends State<ContactPage> {
     );
   }
 }
-
-
-
-
-

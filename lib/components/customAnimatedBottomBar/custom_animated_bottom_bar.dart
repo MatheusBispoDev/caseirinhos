@@ -8,8 +8,6 @@ class CustomAnimatedBottomBar extends StatelessWidget {
   CustomAnimatedBottomBar({
     Key? key,
     this.selectedIndex = 0,
-    this.iconSize = 24,
-    this.backgroundColor,
     this.containerHeight = 56,
     this.animationDuration = const Duration(milliseconds: 200),
     this.mainAxisAlignment = MainAxisAlignment.spaceBetween,
@@ -19,8 +17,6 @@ class CustomAnimatedBottomBar extends StatelessWidget {
         super(key: key);
 
   final int selectedIndex;
-  final double iconSize;
-  final Color? backgroundColor;
   final Duration animationDuration;
   final List<BottomNavyBarItem> items;
   final ValueChanged<int> onItemSelected;
@@ -29,7 +25,8 @@ class CustomAnimatedBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bgColor = backgroundColor ?? Theme.of(context).bottomAppBarColor;
+    final Color iconBackgoundColor = Theme.of(context).primaryColor;
+    final Color iconColor = Theme.of(context).unselectedWidgetColor;
 
     return Stack(
       clipBehavior: Clip.none,
@@ -37,9 +34,6 @@ class CustomAnimatedBottomBar extends StatelessWidget {
       children: [
         Container(
           height: 120,
-          decoration: BoxDecoration(
-            color: bgColor,
-          ),
           child: SafeArea(
             child: Container(
               width: double.infinity,
@@ -53,9 +47,7 @@ class CustomAnimatedBottomBar extends StatelessWidget {
                     onTap: () => onItemSelected(index),
                     child: ItemCustomBar(
                       item: item,
-                      iconSize: iconSize,
                       isSelected: index == selectedIndex,
-                      backgroundColor: bgColor,
                       animationDuration: animationDuration,
                     ),
                   );
@@ -72,12 +64,12 @@ class CustomAnimatedBottomBar extends StatelessWidget {
                 child: AnimatedContainer(
                   duration: Duration(microseconds: 500),
                   decoration: BoxDecoration(
-                    color: Colors.orange.shade400,
+                    color: iconBackgoundColor,
                     shape: BoxShape.circle,
                   ),
                   child: FontAwesomeIconCustom(
                     FontAwesomeIcons.coffee,
-                    color: Colors.black,
+                    color: iconColor,
                     size: 30,
                   ),
                 ),

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
-  const CustomBottomNavBar({ Key? key }) : super(key: key);
+  const CustomBottomNavBar({Key? key}) : super(key: key);
 
   @override
   _CustomBottomNavBarState createState() => _CustomBottomNavBarState();
@@ -18,7 +18,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CustomAnimatedBottomBar(
-        backgroundColor: Colors.white,
         selectedIndex: _currentIndex,
         onItemSelected: (index) => setState(() => _currentIndex = index),
         items: <BottomNavyBarItem>[
@@ -36,28 +35,41 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               color: Colors.black,
             ),
           ),
-        ],),
-        body: Container(),
-      );
+        ],
+      ),
+      body: Container(),
+    );
   }
 
   Widget getBody() {
     List<Widget> pages = [
       Container(
         alignment: Alignment.center,
-        child: Text("Home",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+        child: Text(
+          "Home",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
       ),
       Container(
         alignment: Alignment.center,
-        child: Text("Users",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+        child: Text(
+          "Users",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
       ),
       Container(
         alignment: Alignment.center,
-        child: Text("Messages",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+        child: Text(
+          "Messages",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
       ),
       Container(
         alignment: Alignment.center,
-        child: Text("Settings",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+        child: Text(
+          "Settings",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
       ),
     ];
     return IndexedStack(
@@ -65,5 +77,4 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       children: pages,
     );
   }
-
 }

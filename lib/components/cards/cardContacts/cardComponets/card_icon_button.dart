@@ -1,17 +1,18 @@
 import 'package:caseirinhos/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CardIconButton extends StatelessWidget {
-  final Color colorBackgroundIcon = Colors.orange.shade50;
-  final Color colorIcon = Colors.orange;
   final IconData icon;
   final Function() onTap;
 
-  CardIconButton({Key? key, required this.icon, required this.onTap}) : super(key: key);
+  CardIconButton({Key? key, required this.icon, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Color colorBackgroundIcon = Theme.of(context).accentColor;
+    final Color colorIcon = Theme.of(context).primaryColor;
+
     return GestureDetector(
       child: Container(
         height: 50,

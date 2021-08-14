@@ -1,3 +1,5 @@
+import 'package:caseirinhos/layout/theme/theme_dark.dart';
+import 'package:caseirinhos/layout/theme/theme_light.dart';
 import 'package:caseirinhos/pages/contacts_page/contacts_page.dart';
 import 'package:flutter/material.dart';
 
@@ -10,14 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
-      theme: ThemeData(
-        textSelectionTheme: TextSelectionThemeData(
-          cursorColor: Colors.black12,
-          selectionColor: Colors.black12,
-        ),
-      ),
-      darkTheme: ThemeData(),
+      themeMode: ThemeMode.dark,
+      theme: themeLight(),
+      darkTheme: themeDark(),
       home: ContactPage(),
     );
   }

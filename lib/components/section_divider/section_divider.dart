@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SectionDivider extends StatelessWidget {
   final String text;
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
   final Color colorDivider;
 
   SectionDivider(

@@ -8,12 +8,19 @@ class FontAwesomeIconCustom extends StatelessWidget {
   final String? semanticLabel;
   final TextDirection? textDirection;
 
-  const FontAwesomeIconCustom(this.icon, {Key? key, required this.size, required this.color, this.semanticLabel, this.textDirection}) : super(key: key);
+  const FontAwesomeIconCustom(this.icon,
+      {Key? key,
+      required this.size,
+      required this.color,
+      this.semanticLabel,
+      this.textDirection})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: FaIcon(icon,
+      child: FaIcon(
+        icon,
         color: color,
         size: size,
         semanticLabel: semanticLabel,
