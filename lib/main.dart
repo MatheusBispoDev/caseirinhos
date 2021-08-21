@@ -1,6 +1,6 @@
 import 'package:caseirinhos/layout/theme/theme_dark.dart';
 import 'package:caseirinhos/layout/theme/theme_light.dart';
-import 'package:caseirinhos/pages/contacts_page/contacts_page.dart';
+import 'package:caseirinhos/pages/custom_bottom_nav_bar/custom_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       theme: themeLight(),
       darkTheme: themeDark(),
-      home: ContactPage(),
+      home: CustomBottomNavBar(),
     );
   }
 }

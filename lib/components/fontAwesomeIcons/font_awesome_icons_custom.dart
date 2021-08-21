@@ -3,15 +3,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FontAwesomeIconCustom extends StatelessWidget {
   final IconData icon;
-  final double size;
-  final Color color;
+  final double? size;
+  final Color? color;
   final String? semanticLabel;
   final TextDirection? textDirection;
 
   const FontAwesomeIconCustom(this.icon,
       {Key? key,
-      required this.size,
-      required this.color,
+      this.size,
+      this.color = Colors.black,
       this.semanticLabel,
       this.textDirection})
       : super(key: key);
