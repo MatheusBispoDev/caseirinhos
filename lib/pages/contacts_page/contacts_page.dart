@@ -6,12 +6,12 @@ import 'package:caseirinhos/models/contacts.dart';
 import 'package:caseirinhos/pages/contacts_page/contacts_header_page.dart';
 import 'package:flutter/material.dart';
 
-class ContactPage extends StatefulWidget {
+class ContactsPage extends StatefulWidget {
   @override
-  _ContactPageState createState() => _ContactPageState();
+  _ContactsPageState createState() => _ContactsPageState();
 }
 
-class _ContactPageState extends State<ContactPage> {
+class _ContactsPageState extends State<ContactsPage> {
   final List<Contact> contacts = Contact.getContacts();
   final String dividerText = ContactsPageConstrants.titleAppBarContactsPage;
 

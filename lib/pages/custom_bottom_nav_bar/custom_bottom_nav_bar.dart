@@ -18,37 +18,68 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: CustomAnimatedBottomBar(
-        selectedIndex: _currentIndex,
-        onItemSelected: (index) => setState(() => _currentIndex = index),
-        items: <BottomNavyBarItem>[
-          BottomNavyBarItem(
-            icon: FontAwesomeIconCustom(
-              FontAwesomeIcons.home,
-              size: 26,
+    return WillPopScope(
+      onWillPop: _onWillPop,
+      child: Scaffold(
+        bottomNavigationBar: CustomAnimatedBottomBar(
+          selectedIndex: _currentIndex,
+          onItemSelected: (index) => setState(() => _currentIndex = index),
+          items: <BottomNavyBarItem>[
+            BottomNavyBarItem(
+              icon: FontAwesomeIconCustom(
+                FontAwesomeIcons.home,
+                size: 26,
+              ),
             ),
-          ),
-          BottomNavyBarItem(
-            icon: FontAwesomeIconCustom(
-              FontAwesomeIcons.userFriends,
-              size: 26,
+            BottomNavyBarItem(
+              icon: FontAwesomeIconCustom(
+                FontAwesomeIcons.userFriends,
+                size: 26,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
+        body: getBody(),
       ),
-      body: getBody(),
     );
   }
 
   Widget getBody() {
     List<Widget> pages = [
       HomePage(),
-      ContactPage(),
+      ContactsPage(),
     ];
     return IndexedStack(
       index: _currentIndex,
       children: pages,
     );
+  }
+
+  Future<bool> _onWillPop() async {
+    return (await showDialog<bool>(
+          context: context,
+          builder: (context) => AlertDialog(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            title: Text(
+              'Deseja Sair?',
+              style: Theme.of(context).textTheme.headline2,
+            ),
+            actions: [
+              ElevatedButton(
+                child: Text('Cancelar'),
+                onPressed: () {
+                  Navigator.pop(context, false);
+                },
+              ),
+              ElevatedButton(
+                child: Text('Ok'),
+                onPressed: () {
+                  Navigator.popAndPushNamed(context, '/fingerpage');
+                },
+              ),
+            ],
+          ),
+        )) ??
+        false;
   }
 }
