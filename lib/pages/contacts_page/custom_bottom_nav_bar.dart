@@ -1,8 +1,6 @@
 import 'package:caseirinhos/components/customAnimatedBottomBar/custom_animated_bottom_bar.dart';
 import 'package:caseirinhos/components/customAnimatedBottomBar/model_custom_animated_bottom_bar.dart';
 import 'package:caseirinhos/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
-import 'package:caseirinhos/pages/contacts_page/contacts_page.dart';
-import 'package:caseirinhos/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -27,26 +25,52 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             icon: FontAwesomeIconCustom(
               FontAwesomeIcons.home,
               size: 26,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
           BottomNavyBarItem(
             icon: FontAwesomeIconCustom(
               FontAwesomeIcons.userFriends,
               size: 26,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
         ],
       ),
-      body: getBody(),
+      body: Container(),
     );
   }
 
   Widget getBody() {
     List<Widget> pages = [
-      HomePage(),
-      ContactPage(),
+      Container(
+        alignment: Alignment.center,
+        child: Text(
+          "Home",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+      ),
+      Container(
+        alignment: Alignment.center,
+        child: Text(
+          "Users",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+      ),
+      Container(
+        alignment: Alignment.center,
+        child: Text(
+          "Messages",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+      ),
+      Container(
+        alignment: Alignment.center,
+        child: Text(
+          "Settings",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+      ),
     ];
     return IndexedStack(
       index: _currentIndex,

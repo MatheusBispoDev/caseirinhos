@@ -1,7 +1,6 @@
 import 'package:caseirinhos/layout/theme/theme_dark.dart';
 import 'package:caseirinhos/layout/theme/theme_light.dart';
-import 'package:caseirinhos/pages/custom_bottom_nav_bar.dart';
-import 'package:caseirinhos/pages/finger_print_page/finger_print_page.dart';
+import 'package:caseirinhos/pages/contacts_page/contacts_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,14 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: themeLight(),
       darkTheme: themeDark(),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => FingerPrintPage(),
-        '/bottomNavBar': (context) => CustomBottomNavBar(),
-      },
+      home: ContactPage(),
     );
   }
 }
