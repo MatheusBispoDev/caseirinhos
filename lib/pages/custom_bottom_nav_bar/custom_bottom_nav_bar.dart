@@ -1,3 +1,5 @@
+import 'package:caseirinhos/appcontroller.dart';
+import 'package:caseirinhos/components/alert_dialog/alert_dialog_exit.dart';
 import 'package:caseirinhos/components/customAnimatedBottomBar/custom_animated_bottom_bar.dart';
 import 'package:caseirinhos/components/customAnimatedBottomBar/model_custom_animated_bottom_bar.dart';
 import 'package:caseirinhos/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
@@ -18,12 +20,23 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
+    final Color iconColor = Theme.of(context).unselectedWidgetColor;
+
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         bottomNavigationBar: CustomAnimatedBottomBar(
           selectedIndex: _currentIndex,
           onItemSelected: (index) => setState(() => _currentIndex = index),
+          iconMiddle: FontAwesomeIconCustom(
+            FontAwesomeIcons.coffee,
+            color: iconColor,
+            size: 30,
+          ),
+          onPressIconMiddle: (){
+            //Todo: implementar botão para acessar tela de vendas
+          },
           items: <BottomNavyBarItem>[
             BottomNavyBarItem(
               icon: FontAwesomeIconCustom(
@@ -58,27 +71,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   Future<bool> _onWillPop() async {
     return (await showDialog<bool>(
           context: context,
-          builder: (context) => AlertDialog(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            title: Text(
-              'Deseja Sair?',
-              style: Theme.of(context).textTheme.headline2,
-            ),
-            actions: [
-              ElevatedButton(
-                child: Text('Cancelar'),
-                onPressed: () {
-                  Navigator.pop(context, false);
-                },
-              ),
-              ElevatedButton(
-                child: Text('Ok'),
-                onPressed: () {
-                  Navigator.popAndPushNamed(context, '/fingerpage');
-                },
-              ),
-            ],
-          ),
+          builder: (context) => AlertDialogExit(),
         )) ??
         false;
   }

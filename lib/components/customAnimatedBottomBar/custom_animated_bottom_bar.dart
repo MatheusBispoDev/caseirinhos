@@ -1,7 +1,6 @@
+import 'package:caseirinhos/appcontroller.dart';
 import 'package:caseirinhos/components/customAnimatedBottomBar/item_custom_bar.dart';
-import 'package:caseirinhos/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'model_custom_animated_bottom_bar.dart';
 
 class CustomAnimatedBottomBar extends StatelessWidget {
@@ -11,6 +10,8 @@ class CustomAnimatedBottomBar extends StatelessWidget {
     this.containerHeight = 56,
     this.animationDuration = const Duration(milliseconds: 200),
     this.mainAxisAlignment = MainAxisAlignment.spaceBetween,
+    required this.iconMiddle,
+    required this.onPressIconMiddle,
     required this.items,
     required this.onItemSelected,
   })  : assert(items.length >= 2 && items.length <= 5),
@@ -22,11 +23,12 @@ class CustomAnimatedBottomBar extends StatelessWidget {
   final ValueChanged<int> onItemSelected;
   final MainAxisAlignment mainAxisAlignment;
   final double containerHeight;
+  final Widget iconMiddle;
+  final Function() onPressIconMiddle;
 
   @override
   Widget build(BuildContext context) {
     final Color iconBackgoundColor = Theme.of(context).primaryColor;
-    final Color iconColor = Theme.of(context).unselectedWidgetColor;
 
     return Stack(
       clipBehavior: Clip.none,
@@ -60,24 +62,17 @@ class CustomAnimatedBottomBar extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(bottom: 40),
             child: GestureDetector(
-              child: ClipRect(
-                child: AnimatedContainer(
-                  duration: Duration(microseconds: 500),
-                  decoration: BoxDecoration(
-                    color: iconBackgoundColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: FontAwesomeIconCustom(
-                    FontAwesomeIcons.coffee,
-                    color: iconColor,
-                    size: 30,
+                child: ClipRect(
+                  child: AnimatedContainer(
+                    duration: Duration(microseconds: 500),
+                    decoration: BoxDecoration(
+                      color: iconBackgoundColor,
+                      shape: BoxShape.circle,
+                    ),
+                    child: iconMiddle,
                   ),
                 ),
-              ),
-              onTap: () {
-                // TODO: Adicionar funcionadalide para ir para tela de vendas
-              },
-            ),
+                onTap: () => AppController.instance.changeTheme()),
           ),
         ),
       ],

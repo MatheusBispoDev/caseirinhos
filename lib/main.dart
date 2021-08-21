@@ -1,3 +1,4 @@
+import 'package:caseirinhos/appcontroller.dart';
 import 'package:caseirinhos/layout/theme/theme_dark.dart';
 import 'package:caseirinhos/layout/theme/theme_light.dart';
 import 'package:caseirinhos/pages/contacts_page/contacts_page.dart';
@@ -10,17 +11,23 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
-      theme: themeLight(),
-      darkTheme: themeDark(),
-      initialRoute: '/fingerpage',
-      routes: {
-        '/fingerpage': (context) => FingerPrintPage(),
-        '/customnavbar': (context) => CustomBottomNavBar(),
-        '/contactspage': (context) => ContactsPage(),
-      },
-    );
+    return AnimatedBuilder(
+        animation: AppController.instance,
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            themeMode: AppController.instance.isDarkTheme
+                ? ThemeMode.dark
+                : ThemeMode.light,
+            theme: themeLight(),
+            darkTheme: themeDark(),
+            initialRoute: '/fingerpage',
+            routes: {
+              '/fingerpage': (context) => FingerPrintPage(),
+              '/customnavbar': (context) => CustomBottomNavBar(),
+              '/contactspage': (context) => ContactsPage(),
+            },
+          );
+        });
   }
 }
