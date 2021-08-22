@@ -41,6 +41,56 @@ class Contact {
               road: 'Rua Dona Palmira',
               number: '292',
               district: 'Jd. Helena Maria')),
+                    Contact(
+          name: 'Nice',
+          phone: '97773-0082',
+          email: 'theu.bispo@gmail.com',
+          adress: Adress(
+              road: 'Rua Dona Palmira',
+              number: '292',
+              district: 'Jd. Helena Maria')),
+                    Contact(
+          name: 'Nice',
+          phone: '97773-0082',
+          email: 'theu.bispo@gmail.com',
+          adress: Adress(
+              road: 'Rua Dona Palmira',
+              number: '292',
+              district: 'Jd. Helena Maria')),
+                    Contact(
+          name: 'Nice',
+          phone: '97773-0082',
+          email: 'theu.bispo@gmail.com',
+          adress: Adress(
+              road: 'Rua Dona Palmira',
+              number: '292',
+              district: 'Jd. Helena Maria')),
+
+                    Contact(
+          name: 'Nice',
+          phone: '97773-0082',
+          email: 'theu.bispo@gmail.com',
+          adress: Adress(
+              road: 'Rua Dona Palmira',
+              number: '292',
+              district: 'Jd. Helena Maria')),
+                    Contact(
+          name: 'Nice',
+          phone: '97773-0082',
+          email: 'theu.bispo@gmail.com',
+          adress: Adress(
+              road: 'Rua Dona Palmira',
+              number: '292',
+              district: 'Jd. Helena Maria')),
+                    Contact(
+          name: 'Nice',
+          phone: '97773-0082',
+          email: 'theu.bispo@gmail.com',
+          adress: Adress(
+              road: 'Rua Dona Palmira',
+              number: '292',
+              district: 'Jd. Helena Maria')),
+              
     ];
   }
 }

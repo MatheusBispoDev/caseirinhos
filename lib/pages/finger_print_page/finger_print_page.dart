@@ -21,12 +21,11 @@ class _FingerPrintPageState extends State<FingerPrintPage> {
 
   @override
   Widget build(BuildContext context) {
-    final Color iconColor = Theme.of(context).unselectedWidgetColor;
+    final Color scaffoldColor = Theme.of(context).scaffoldBackgroundColor;
     final TextStyle? titleTextStyle = Theme.of(context).textTheme.headline3;
-    final TextStyle? descTextStyle = Theme.of(context).textTheme.headline2;
 
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: scaffoldColor,
       body: GestureDetector(
         onTap: () => _verifiyAuthenticated(),
         child: SafeArea(
@@ -54,7 +53,7 @@ class _FingerPrintPageState extends State<FingerPrintPage> {
                     height: 300,
                     width: MediaQuery.of(context).size.width,
                     child: FontAwesomeIconCustom(
-                      FontAwesomeIcons.coffee,
+                      FontAwesomeIcons.mugHot,
                       color: colorBiometric,
                       size: 100,
                     ),

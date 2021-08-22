@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
                 : ThemeMode.light,
             theme: themeLight(),
             darkTheme: themeDark(),
-            initialRoute: '/fingerpage',
+            initialRoute: '/customnavbar',
             routes: {
               '/fingerpage': (context) => FingerPrintPage(),
               '/customnavbar': (context) => CustomBottomNavBar(),
