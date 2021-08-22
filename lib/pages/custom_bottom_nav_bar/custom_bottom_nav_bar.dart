@@ -1,4 +1,3 @@
-import 'package:caseirinhos/appcontroller.dart';
 import 'package:caseirinhos/components/alert_dialog/alert_dialog_exit.dart';
 import 'package:caseirinhos/components/customAnimatedBottomBar/custom_animated_bottom_bar.dart';
 import 'package:caseirinhos/components/customAnimatedBottomBar/model_custom_animated_bottom_bar.dart';

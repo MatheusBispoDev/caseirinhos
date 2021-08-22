@@ -14,6 +14,12 @@ class _FingerPrintPageState extends State<FingerPrintPage> {
   Color colorBiometric = Colors.grey;
 
   @override
+  void initState() {
+    _verifiyAuthenticated();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final Color iconColor = Theme.of(context).unselectedWidgetColor;
     final TextStyle? titleTextStyle = Theme.of(context).textTheme.headline3;
@@ -21,18 +27,19 @@ class _FingerPrintPageState extends State<FingerPrintPage> {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: SafeArea(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  height: 200,
-                  width: MediaQuery.of(context).size.width,
-                  child: Expanded(
+      body: GestureDetector(
+        onTap: () => _verifiyAuthenticated(),
+        child: SafeArea(
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width,
                     child: Column(
                       children: [
                         Text(
@@ -40,59 +47,48 @@ class _FingerPrintPageState extends State<FingerPrintPage> {
                           style: titleTextStyle,
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 30),
-                        Text(
-                          'Para acessar clique na biometria',
-                          style: descTextStyle,
-                          textAlign: TextAlign.center,
-                        ),
                       ],
                     ),
                   ),
-                ),
-                Container(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width,
-                  child: Expanded(
+                  Container(
+                    height: 300,
+                    width: MediaQuery.of(context).size.width,
                     child: FontAwesomeIconCustom(
                       FontAwesomeIcons.coffee,
                       color: colorBiometric,
                       size: 100,
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 100),
-                  child: GestureDetector(
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 100),
                     child: FontAwesomeIconCustom(
                       Icons.fingerprint,
                       size: 120,
                       color: colorBiometric,
                     ),
-                    onTap: () async {
-                      //Todo: refatoracao / Separar regra de autenticacao da view
-                      final isAuthenticated =
-                          await LocalAuth.authenticateWithBiometrics();
-
-                      if (isAuthenticated) {
-                        setState(() {
-                          colorBiometric = Colors.green;
-                        });
-                        Navigator.pushReplacementNamed(
-                            context, '/customnavbar');
-                      } else {
-                        setState(() {
-                          colorBiometric = Colors.red;
-                        });
-                      }
-                    },
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
       ),
     );
+  }
+
+  _verifiyAuthenticated() async {
+    //Todo: refatoracao / Separar regra de autenticacao da view
+    final isAuthenticated = await LocalAuth.authenticateWithBiometrics();
+
+    if (isAuthenticated) {
+      setState(() {
+        colorBiometric = Colors.green;
+      });
+      Navigator.pushReplacementNamed(context, '/customnavbar');
+    } else {
+      setState(() {
+        colorBiometric = Colors.red;
+      });
+    }
   }
 }
