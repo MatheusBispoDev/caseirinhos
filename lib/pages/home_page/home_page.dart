@@ -14,7 +14,8 @@ class HomePage extends StatelessWidget {
     final Color colorPrimay = Theme.of(context).primaryColor;
 
     return Scaffold(
-      body: Container(),
+      backgroundColor: scaffoldColor,
+      body: Center(child: Text('Home')),
     );
   }
 }

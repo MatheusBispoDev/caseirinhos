@@ -1,4 +1,3 @@
-import 'package:caseirinhos/appcontroller.dart';
 import 'package:caseirinhos/components/customAnimatedBottomBar/item_custom_bar.dart';
 import 'package:flutter/material.dart';
 import 'model_custom_animated_bottom_bar.dart';
@@ -72,7 +71,8 @@ class CustomAnimatedBottomBar extends StatelessWidget {
                     child: iconMiddle,
                   ),
                 ),
-                onTap: () => AppController.instance.changeTheme()),
+                onTap: onPressIconMiddle,
+              ),
           ),
         ),
       ],

@@ -19,6 +19,7 @@ dependencies:
   font_awesome_flutter: ^9.1.0
   local_auth: ^1.1.5
   sliver_header_delegate: ^0.0.5
+  bloc: ^7.1.0
   
 dev_dependencies:
   flutter_test:

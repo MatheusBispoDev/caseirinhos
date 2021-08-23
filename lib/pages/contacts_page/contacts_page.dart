@@ -1,5 +1,6 @@
 import 'package:caseirinhos/components/cards/cardContacts/card_contacts.dart';
 import 'package:caseirinhos/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
+import 'package:caseirinhos/components/icons/icon_app_bar.dart';
 import 'package:caseirinhos/components/section_divider/section_divider.dart';
 import 'package:caseirinhos/components/textfields/textfield_search.dart';
 import 'package:caseirinhos/layout/constants/contacts_page_constants.dart';
@@ -37,9 +38,12 @@ class _ContactsPageState extends State<ContactsPage> {
               backgroundColor: scaffoldColor,
               leading: FavoritedIcon(),
               actions: [
-                AddIcon(),
+                IconAppBar(
+                  icon: FontAwesomeIcons.plus,
+                  padding: EdgeInsets.symmetric(horizontal: 50),
+                  onTap: () {},
+                ),
               ],
-
               children: [
                 FlexibleTextItem(
                   text: 'Contatos',
@@ -124,29 +128,6 @@ class _FavoritedIconState extends State<FavoritedIcon> {
           isSelectedFavorite = !isSelectedFavorite;
         });
       },
-    );
-  }
-}
-
-class AddIcon extends StatelessWidget {
-  const AddIcon({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final Color colorIcon = Theme.of(context).unselectedWidgetColor;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50),
-      child: GestureDetector(
-        child: FontAwesomeIconCustom(
-          FontAwesomeIcons.plus,
-          color: colorIcon,
-          size: 30,
-        ),
-        onTap: () {
-          //TODO: criar tela de cadastro de contatos
-        },
-      ),
     );
   }
 }

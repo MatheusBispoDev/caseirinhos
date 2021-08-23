@@ -4,6 +4,7 @@ import 'package:caseirinhos/components/customAnimatedBottomBar/model_custom_anim
 import 'package:caseirinhos/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
 import 'package:caseirinhos/pages/contacts_page/contacts_page.dart';
 import 'package:caseirinhos/pages/home_page/home_page.dart';
+import 'package:caseirinhos/pages/sales_page/sales_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -34,6 +35,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             size: 30,
           ),
           onPressIconMiddle: (){
+            setState(() => _currentIndex = 2);
             //Todo: implementar botão para acessar tela de vendas
           },
           items: <BottomNavyBarItem>[
@@ -60,6 +62,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
     List<Widget> pages = [
       HomePage(),
       ContactsPage(),
+      SalesPage(),      
     ];
     return IndexedStack(
       index: _currentIndex,
