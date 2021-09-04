@@ -1,0 +1,45 @@
+import 'package:caseirinhos/app/repositories/authentication/bio_auth_repository.dart';
+import 'package:flutter/services.dart';
+import 'package:local_auth/local_auth.dart';
+
+class LocalAuthRepository implements IBiometricAuthRepository {
+  static final _auth = LocalAuthentication();
+
+  @override
+  Future<bool> authenticateWithBio() async {
+    final isSupported = await biometricSupported();
+    final isAvailable = await hasBiometrics();
+
+    if (!isAvailable && !isSupported) {
+      return false;
+    }
+
+    try {
+      return await _auth.authenticate(
+        localizedReason: 'Escaneando biometria',
+        useErrorDialogs: true,
+        stickyAuth: true,
+      );
+    } on PlatformException {
+      return false;
+    }
+  }
+
+  @override
+  Future<bool> biometricSupported() async {
+    try {
+      return await _auth.isDeviceSupported();
+    } on PlatformException {
+      return false;
+    }
+  }
+
+  @override
+  Future<bool> hasBiometrics() async {
+    try {
+      return await _auth.canCheckBiometrics;
+    } on PlatformException {
+      return false;
+    }
+  }
+}
