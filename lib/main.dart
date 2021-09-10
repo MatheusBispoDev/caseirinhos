@@ -1,6 +1,6 @@
 import 'package:caseirinhos/app/repositories/authentication/local_auth_repository.dart';
 import 'package:caseirinhos/app/views/appcontroller.dart';
-import 'package:caseirinhos/app/views/blocs/finger_page_bloc/finger_page_bloc.dart';
+import 'package:caseirinhos/app/views/blocs/finger_print_bloc/finger_print_bloc.dart';
 import 'package:caseirinhos/app/views/layout/theme/theme_dark.dart';
 import 'package:caseirinhos/app/views/layout/theme/theme_light.dart';
 import 'package:caseirinhos/app/views/pages/contacts_page/contacts_page.dart';
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
                   : ThemeMode.light,
               theme: themeLight(),
               darkTheme: themeDark(),
-              initialRoute: '/fingerpage',
+              initialRoute: '/customnavbar',
               routes: {
                 '/fingerpage': (context) => FingerPrintPage(),
                 '/customnavbar': (context) => CustomBottomNavBar(),

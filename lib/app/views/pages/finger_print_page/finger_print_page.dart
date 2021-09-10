@@ -1,6 +1,6 @@
 import 'package:caseirinhos/app/views/appcontroller.dart';
-import 'package:caseirinhos/app/views/blocs/finger_page_bloc/finger_page_bloc.dart';
-import 'package:caseirinhos/app/views/blocs/finger_page_bloc/finger_page_state.dart';
+import 'package:caseirinhos/app/views/blocs/finger_print_bloc/finger_print_bloc.dart';
+import 'package:caseirinhos/app/views/blocs/finger_print_bloc/finger_print_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
