@@ -21,6 +21,7 @@ dependencies:
   sliver_header_delegate: ^0.0.5
   flutter_bloc: ^7.2.0
   provider: ^6.0.0
+  lottie: ^1.1.0
   
 dev_dependencies:
   flutter_test:
@@ -39,3 +40,4 @@ flutter:
 
   assets:
     - "assets/images/"
+    - "assets/lottie/"

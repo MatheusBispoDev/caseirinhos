@@ -5,7 +5,6 @@ import 'package:caseirinhos/app/views/components/fontAwesomeIcons/font_awesome_i
 import 'package:caseirinhos/app/views/components/icons/icon_app_bar.dart';
 import 'package:caseirinhos/app/views/components/section_divider/section_divider.dart';
 import 'package:caseirinhos/app/views/components/textfields/textfield_search.dart';
-import 'package:caseirinhos/app/views/layout/constants/contacts_page_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sliver_header_delegate/sliver_header_delegate.dart';
@@ -17,7 +16,8 @@ class ContactsPage extends StatefulWidget {
 
 class _ContactsPageState extends State<ContactsPage> {
   final List<Contact> contacts = Contact.getContacts();
-  final String dividerText = ContactsPageConstrants.titleAppBarContactsPage;
+  final String dividerTextContact = 'Recentes';
+  final String titleAppBarContactsPage = 'Contatos';
 
   @override
   Widget build(BuildContext context) {
