@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
 
 class LocalAuthRepository implements IBiometricAuthRepository {
-  static final _auth = LocalAuthentication();
+  final _auth = LocalAuthentication();
 
   @override
   Future<bool> authenticateWithBio() async {

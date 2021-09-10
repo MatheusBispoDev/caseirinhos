@@ -22,4 +22,8 @@ class FingerPageBloc extends Bloc<void, FingerPageState> {
       yield FingerPageError(e.toString());
     }
   }
+
+  
+
+
 }

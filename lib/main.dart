@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider<AppController>.value(value: AppController.instance),
         Provider(create: (_) => LocalAuthRepository()),
         BlocProvider(create: (context) => FingerPageBloc(context.read<LocalAuthRepository>())),
       ],
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              themeMode: AppController.instance.isDarkTheme
+              themeMode: Provider.of<AppController>(context).isDarkTheme
                   ? ThemeMode.dark
                   : ThemeMode.light,
               theme: themeLight(),
