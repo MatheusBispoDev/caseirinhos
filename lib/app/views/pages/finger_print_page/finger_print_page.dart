@@ -1,6 +1,8 @@
-
+import 'package:caseirinhos/app/views/blocs/finger_page_bloc/finger_page_bloc.dart';
+import 'package:caseirinhos/app/views/blocs/finger_page_bloc/finger_page_state.dart';
 import 'package:caseirinhos/app/views/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FingerPrintPage extends StatefulWidget {
@@ -26,7 +28,9 @@ class _FingerPrintPageState extends State<FingerPrintPage> {
     return Scaffold(
       backgroundColor: scaffoldColor,
       body: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          context.read<FingerPageBloc>().add(0);
+        },
         child: SafeArea(
           child: Container(
             height: MediaQuery.of(context).size.height,
@@ -48,14 +52,30 @@ class _FingerPrintPageState extends State<FingerPrintPage> {
                       ],
                     ),
                   ),
-                  Container(
-                    height: 300,
-                    width: MediaQuery.of(context).size.width,
-                    child: FontAwesomeIconCustom(
-                      FontAwesomeIcons.mugHot,
-                      color: colorBiometric,
-                      size: 100,
-                    ),
+                  BlocBuilder<FingerPageBloc, FingerPageState>(
+                    bloc: context.read<FingerPageBloc>(),
+                    builder: (context, state) {
+                      if (state is FingerPageWaiting) {
+                        return Container();
+                      }
+
+                      if (state is FingerPageError) {
+                        return Container(
+                          height: 300,
+                          color: Colors.red,
+                        );
+                      }
+
+                      return Container(
+                        height: 300,
+                        width: MediaQuery.of(context).size.width,
+                        child: FontAwesomeIconCustom(
+                          FontAwesomeIcons.mugHot,
+                          color: colorBiometric,
+                          size: 100,
+                        ),
+                      );
+                    },
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 100),
@@ -73,20 +93,4 @@ class _FingerPrintPageState extends State<FingerPrintPage> {
       ),
     );
   }
-  /*
-  _verifiyAuthenticated() async {
-    //Todo: refatoracao / Separar regra de autenticacao da view
-    final isAuthenticated = await LocalAuth.authenticateWithBiometrics();
-
-    if (isAuthenticated) {
-      setState(() {
-        colorBiometric = Colors.green;
-      });
-      Navigator.pushReplacementNamed(context, '/customnavbar');
-    } else {
-      setState(() {
-        colorBiometric = Colors.red;
-      });
-    }
-  }*/
 }

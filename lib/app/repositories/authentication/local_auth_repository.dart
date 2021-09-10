@@ -7,8 +7,8 @@ class LocalAuthRepository implements IBiometricAuthRepository {
 
   @override
   Future<bool> authenticateWithBio() async {
-    final isSupported = await biometricSupported();
-    final isAvailable = await hasBiometrics();
+    final isSupported = await _biometricSupported();
+    final isAvailable = await _hasBiometrics();
 
     if (!isAvailable && !isSupported) {
       return false;
@@ -25,8 +25,7 @@ class LocalAuthRepository implements IBiometricAuthRepository {
     }
   }
 
-  @override
-  Future<bool> biometricSupported() async {
+  Future<bool> _biometricSupported() async {
     try {
       return await _auth.isDeviceSupported();
     } on PlatformException {
@@ -34,8 +33,7 @@ class LocalAuthRepository implements IBiometricAuthRepository {
     }
   }
 
-  @override
-  Future<bool> hasBiometrics() async {
+  Future<bool> _hasBiometrics() async {
     try {
       return await _auth.canCheckBiometrics;
     } on PlatformException {
