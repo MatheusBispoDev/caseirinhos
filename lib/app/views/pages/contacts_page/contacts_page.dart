@@ -1,10 +1,9 @@
-
-import 'package:caseirinhos/app/models/contacts.dart';
-import 'package:caseirinhos/app/views/components/cards/cardContacts/card_contacts.dart';
-import 'package:caseirinhos/app/views/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
-import 'package:caseirinhos/app/views/components/icons/icon_app_bar.dart';
-import 'package:caseirinhos/app/views/components/section_divider/section_divider.dart';
-import 'package:caseirinhos/app/views/components/textfields/textfield_search.dart';
+import 'package:caseirinhos/app/models/contact_local.dart';
+import 'package:caseirinhos/app/views/layout/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
+import 'package:caseirinhos/app/views/layout/components/icons/icon_app_bar.dart';
+import 'package:caseirinhos/app/views/layout/components/section_divider/section_divider.dart';
+import 'package:caseirinhos/app/views/layout/components/textfields/textfield_search.dart';
+import 'package:caseirinhos/app/views/pages/contacts_page/cardContacts/card_contacts.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sliver_header_delegate/sliver_header_delegate.dart';
@@ -15,7 +14,7 @@ class ContactsPage extends StatefulWidget {
 }
 
 class _ContactsPageState extends State<ContactsPage> {
-  final List<Contact> contacts = Contact.getContacts();
+  final List<ContactLocal> contacts = ContactLocal.getContacts();
   final String dividerTextContact = 'Recentes';
   final String titleAppBarContactsPage = 'Contatos';
 

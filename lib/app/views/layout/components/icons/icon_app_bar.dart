@@ -1,5 +1,4 @@
-
-import 'package:caseirinhos/app/views/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
+import 'package:caseirinhos/app/views/layout/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
 import 'package:flutter/material.dart';
 
 class IconAppBar extends StatelessWidget {

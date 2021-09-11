@@ -1,9 +1,8 @@
-
-import 'package:caseirinhos/app/models/contacts.dart';
+import 'package:caseirinhos/app/models/contact_local.dart';
 import 'package:flutter/material.dart';
 
 class CardDescriptions extends StatelessWidget {
-  final Contact contact;
+  final ContactLocal contact;
 
   CardDescriptions(this.contact);
 

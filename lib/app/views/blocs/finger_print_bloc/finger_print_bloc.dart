@@ -1,4 +1,5 @@
-import 'package:caseirinhos/app/repositories/authentication/bio_auth_repository.dart';
+
+import 'package:caseirinhos/app/repositories/authentication_repository/bio_auth_repository.dart';
 import 'package:caseirinhos/app/views/blocs/finger_print_bloc/finger_print_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

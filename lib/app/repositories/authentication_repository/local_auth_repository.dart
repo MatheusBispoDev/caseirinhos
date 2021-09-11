@@ -1,4 +1,4 @@
-import 'package:caseirinhos/app/repositories/authentication/bio_auth_repository.dart';
+import 'package:caseirinhos/app/repositories/authentication_repository/bio_auth_repository.dart';
 import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
 

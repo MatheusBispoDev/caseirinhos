@@ -1,5 +1,4 @@
-
-import 'package:caseirinhos/app/views/components/customAnimatedBottomBar/item_custom_bar.dart';
+import 'package:caseirinhos/app/views/layout/components/customAnimatedBottomBar/item_custom_bar.dart';
 import 'package:flutter/material.dart';
 import 'model_custom_animated_bottom_bar.dart';
 

@@ -1,9 +1,9 @@
 import 'package:caseirinhos/app/views/blocs/bottom_nav_bloc/bottom_nav_bloc.dart';
 import 'package:caseirinhos/app/views/blocs/bottom_nav_bloc/bottom_nav_state.dart';
-import 'package:caseirinhos/app/views/components/alert_dialog/alert_dialog_exit.dart';
-import 'package:caseirinhos/app/views/components/customAnimatedBottomBar/custom_animated_bottom_bar.dart';
-import 'package:caseirinhos/app/views/components/customAnimatedBottomBar/model_custom_animated_bottom_bar.dart';
-import 'package:caseirinhos/app/views/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
+import 'package:caseirinhos/app/views/layout/components/alert_dialog/alert_dialog_exit.dart';
+import 'package:caseirinhos/app/views/layout/components/customAnimatedBottomBar/custom_animated_bottom_bar.dart';
+import 'package:caseirinhos/app/views/layout/components/customAnimatedBottomBar/model_custom_animated_bottom_bar.dart';
+import 'package:caseirinhos/app/views/layout/components/fontAwesomeIcons/font_awesome_icons_custom.dart';
 import 'package:caseirinhos/app/views/pages/contacts_page/contacts_page.dart';
 import 'package:caseirinhos/app/views/pages/home_page/home_page.dart';
 import 'package:caseirinhos/app/views/pages/sales_page/sales_page.dart';

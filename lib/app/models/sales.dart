@@ -1,9 +1,9 @@
 import 'package:caseirinhos/app/models/cakes.dart';
-import 'package:caseirinhos/app/models/contacts.dart';
+import 'package:caseirinhos/app/models/contact_local.dart';
 
 class Sales {
   String? codSales;
-  Contact client;
+  ContactLocal client;
   DateTime date;
   List<Cake> cakes;
   double value;
@@ -15,11 +15,11 @@ class Sales {
 
   static List<Sales> getSales(){
     return <Sales>[
-      Sales(client: Contact.getContactExemple(), date: DateTime.now(), cakes: Cake.getCake(), value: 50.0),
-      Sales(client: Contact.getContactExemple(), date: DateTime.now(), cakes: Cake.getCake(), value: 150.0),
-      Sales(client: Contact.getContactExemple(), date: DateTime.now(), cakes: Cake.getCake(), value: 250.0),
-      Sales(client: Contact.getContactExemple(), date: DateTime.now(), cakes: Cake.getCake(), value: 350.0),
-      Sales(client: Contact.getContactExemple(), date: DateTime.now(), cakes: Cake.getCake(), value: 450.0),
+      Sales(client: ContactLocal.getContactExemple(), date: DateTime.now(), cakes: Cake.getCake(), value: 50.0),
+      Sales(client: ContactLocal.getContactExemple(), date: DateTime.now(), cakes: Cake.getCake(), value: 150.0),
+      Sales(client: ContactLocal.getContactExemple(), date: DateTime.now(), cakes: Cake.getCake(), value: 250.0),
+      Sales(client: ContactLocal.getContactExemple(), date: DateTime.now(), cakes: Cake.getCake(), value: 350.0),
+      Sales(client: ContactLocal.getContactExemple(), date: DateTime.now(), cakes: Cake.getCake(), value: 450.0),
     ];
   }
 }

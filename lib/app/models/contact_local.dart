@@ -1,15 +1,13 @@
-
-
 import 'package:caseirinhos/app/models/address.dart';
 
-class Contact {
+class ContactLocal {
   String name;
   String phone;
   String email;
   String image;
   Adress adress;
 
-  Contact(
+  ContactLocal(
       {required this.name,
       required this.phone,
       required this.email,
@@ -18,7 +16,7 @@ class Contact {
       });
 
   static getContactExemple() {
-    return Contact(
+    return ContactLocal(
           name: 'Matheus',
           phone: '97773-0082',
           email: 'theu.bispo@gmail.com',
@@ -28,9 +26,9 @@ class Contact {
               district: 'Jd. Helena Maria'),);
   }
 
-  static List<Contact> getContacts() {
-    return <Contact>[
-      Contact(
+  static List<ContactLocal> getContacts() {
+    return <ContactLocal>[
+      ContactLocal(
           name: 'Matheus',
           phone: '97773-0082',
           email: 'theu.bispo@gmail.com',
@@ -38,7 +36,7 @@ class Contact {
               road: 'Rua Dona Palmira',
               number: '292',
               district: 'Jd. Helena Maria'),),
-      Contact(
+      ContactLocal(
           name: 'Lucas',
           phone: '97773-0082',
           email: 'theu.bispo@gmail.com',
@@ -46,7 +44,7 @@ class Contact {
               road: 'Rua Dona Palmira',
               number: '292',
               district: 'Jd. Helena Maria')),
-      Contact(
+      ContactLocal(
           name: 'Nice',
           phone: '97773-0082',
           email: 'theu.bispo@gmail.com',
@@ -54,7 +52,7 @@ class Contact {
               road: 'Rua Dona Palmira',
               number: '292',
               district: 'Jd. Helena Maria')),
-                    Contact(
+                    ContactLocal(
           name: 'Nice',
           phone: '97773-0082',
           email: 'theu.bispo@gmail.com',
@@ -62,7 +60,7 @@ class Contact {
               road: 'Rua Dona Palmira',
               number: '292',
               district: 'Jd. Helena Maria')),
-                    Contact(
+                    ContactLocal(
           name: 'Nice',
           phone: '97773-0082',
           email: 'theu.bispo@gmail.com',
@@ -70,7 +68,7 @@ class Contact {
               road: 'Rua Dona Palmira',
               number: '292',
               district: 'Jd. Helena Maria')),
-                    Contact(
+                    ContactLocal(
           name: 'Nice',
           phone: '97773-0082',
           email: 'theu.bispo@gmail.com',
@@ -79,7 +77,7 @@ class Contact {
               number: '292',
               district: 'Jd. Helena Maria')),
 
-                    Contact(
+                    ContactLocal(
           name: 'Nice',
           phone: '97773-0082',
           email: 'theu.bispo@gmail.com',
@@ -87,7 +85,7 @@ class Contact {
               road: 'Rua Dona Palmira',
               number: '292',
               district: 'Jd. Helena Maria')),
-                    Contact(
+                    ContactLocal(
           name: 'Nice',
           phone: '97773-0082',
           email: 'theu.bispo@gmail.com',
@@ -95,7 +93,7 @@ class Contact {
               road: 'Rua Dona Palmira',
               number: '292',
               district: 'Jd. Helena Maria')),
-                    Contact(
+                    ContactLocal(
           name: 'Nice',
           phone: '97773-0082',
           email: 'theu.bispo@gmail.com',

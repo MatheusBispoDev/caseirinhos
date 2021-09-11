@@ -1,5 +1,4 @@
-
-import 'package:caseirinhos/app/models/contacts.dart';
+import 'package:caseirinhos/app/models/contact_local.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'cardComponets/card_descriptions.dart';
@@ -7,7 +6,7 @@ import 'cardComponets/card_icon_button.dart';
 import 'cardComponets/card_profile.dart';
 
 class CardContacts extends StatelessWidget {
-  final Contact contact;
+  final ContactLocal contact;
   CardContacts(this.contact);
 
   @override
